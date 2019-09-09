@@ -1,0 +1,31 @@
+    #include "PDFWriter.h"
+    #include "PDFPage.h"
+    #include "PageContentContext.h"
+    
+    PDFWriter pdfWriter;
+    pdfWriter.StartPDF("example.pdf", ePDFVersion13);
+
+    PDFPage *page = new PDFPage();
+    page->SetMediaBox(PDFRectangle(0, 0, 595, 842)); //Tamaño de donde dibuja
+
+    PageContentContext* cxt = pdfWriter.StartPageContentContext(page); //Crea el context
+
+
+    //Texto
+    PDFUsedFont* font = pdfWriter.GetFontForFile("/home/eduardo/Downloads/PDF-Writer-master/TestMaterials/fonts/BrushScriptStd.otf");
+    
+    AbstractContentContext::TextOptions textOptions(font,14,AbstractContentContext::eGray,0);
+    cxt->WriteText(0,542,"Hello World",textOptions);
+    //Imagen
+    AbstractContentContext::ImageOptions opt3;
+    opt3.transformationMethod = AbstractContentContext::eFit;
+    opt3.boundingBoxHeight = 500;
+    opt3.boundingBoxWidth = 500;
+    opt3.fitProportional = true;
+    cxt->DrawImage(0,742,"example.png",opt3);
+
+    pdfWriter.EndPageContentContext(cxt);
+
+    pdfWriter.WritePageAndRelease(page);
+
+    pdfWriter.EndPDF();

@@ -1,0 +1,19 @@
+{
+	"eventos" :
+	[
+		{
+			"nombre" : "Radiohead en Costa Rica",
+			"fecha": "05/10/2019",
+			"tipo" : "Concierto",
+			"logo" : "https://ksassets.timeincuk.net/wp/uploads/sites/55/2017/05/RadioheadGettyImages-156223312-920x584.jpg",
+			"hora" : "08:00pm"
+		},
+		{
+			"nombre" : "Costa Rica vs Uruguay",
+			"fecha": "06/09/2019",
+			"tipo" : "Sports",
+			"logo" : "https://i2.wp.com/www.fedefutbol.com/wp-content/uploads/2019/03/WhatsApp-Image-2019-03-06-at-8.32.28-AM.jpeg",
+			"hora" : "08:00pm"
+		}
+	]
+}

@@ -1,0 +1,3 @@
+all:
+	g++ main.cpp Src/TicketManager.cpp -I ~/Downloads/PDF-Writer-master/PDFWriter/ -I Include/ -L ~/Downloads/PDF-Writer-master/PDFWriter/  -l PDFWriter -L ~/Downloads/PDF-Writer-master/LibAesgm/ -l LibAesgm -L ~/Downloads/PDF-Writer-master/LibTiff/ -l LibTiff -L ~/Downloads/PDF-Writer-master/LibJpeg/ -l LibJpeg -L ~/Downloads/PDF-Writer-master/LibPng/ -l LibPng -L ~/Downloads/PDF-Writer-master/ZLib/ -l Zlib -L ~/Downloads/PDF-Writer-master/FreeType/ -l FreeType -o main
+	./main 
