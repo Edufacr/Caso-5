@@ -1,8 +1,9 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include "Include/nlohmann/json.hpp"
-#include "TicketManager.h"
+#include "json.hpp"
+
+#include "TicketManager.hpp"
 
 int main(int argc, char const *argv[])
 {
