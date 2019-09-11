@@ -2,12 +2,15 @@
 
 JsonReader::JsonReader(){
 }
+JsonReader::JsonReader(std::string pPath){
+    cargarJson(pPath);
+}
 JsonReader::~JsonReader(){
     
 }
 
-bool JsonReader::cargarJson(std::string pName){
-    std::ifstream myfile(pName);
+bool JsonReader::cargarJson(std::string pPath){
+    std::ifstream myfile(pPath);
     if (myfile.is_open())
     {
         myfile >> file;
@@ -15,15 +18,20 @@ bool JsonReader::cargarJson(std::string pName){
         return true;
     }
     else
-        std::cout << "Unable to open file";
+        std::cout << "Unable to open file"<<std::endl;
         return false;
 }
 
-void JsonReader::transformJsonToList(){
-    nlohmann::json j = file["eventos"];
-    for (int i = 0; i < j.size(); i++)
+void JsonReader::transformJsonToList(Lista<Node<Event>> *pList){
+    nlohmann::json *j = &(file["eventos"]);
+
+    for (int i = 0; i < j->size(); i++)
     {
-        j[i]; //add to list
+        pList->Add(new Node<Event>(transformJsonToEvent(j[0][i])));
     }
     
+}
+
+Event *JsonReader::transformJsonToEvent(nlohmann::json pEvent){
+    return new Event(pEvent["nombre"],pEvent["fecha"],pEvent["tipo"],pEvent["logo"],pEvent["hora"]);
 }

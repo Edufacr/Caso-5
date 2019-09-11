@@ -5,16 +5,19 @@
 #include <iostream>
 #include <fstream>
 #include "json.hpp"
+#include "Lista.hpp"
+#include "Event.hpp"
 class JsonReader
 {
+private:
     nlohmann::json file;
 
-private:
-    
 public:
     JsonReader();
+    JsonReader(std::string pPath);
     ~JsonReader();
-    bool cargarJson(std::string pName);
-    void transformJsonToList();
+    bool cargarJson(std::string pPath);
+    void transformJsonToList(Lista<Node<Event>> *pList);
+    Event *transformJsonToEvent(nlohmann::json pEvent);
 };
 #endif

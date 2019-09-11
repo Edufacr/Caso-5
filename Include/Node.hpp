@@ -1,5 +1,6 @@
 #ifndef NODE_HPP
 #define NODE_HPP
+#include <string>
 template <class V>
 class Node
 {
@@ -15,6 +16,7 @@ public:
     Node<V> *getNext();
     void setNext(Node<V> *pNode);
     V *getValue();
+    std::string ToString();
 };
 
 template <class V>
@@ -59,6 +61,12 @@ template <class V>
 V *Node<V>::getValue()
 {
     return value;
+}
+
+template <class V>
+std::string Node<V>::ToString()
+{
+    return value->ToString();
 }
 //template class Node<int>;
 #endif

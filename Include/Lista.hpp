@@ -1,6 +1,7 @@
 #ifndef LISTA_HPP
 #define LISTA_HPP
 #include "Node.hpp"
+#include <iostream>
 template <class N>
 class Lista
 {
@@ -21,6 +22,7 @@ public:
     N* Search();
     void IncreaseSize();
     int getSize();
+    void Print();
 };
 
 
@@ -100,6 +102,17 @@ void Lista<N>::IncreaseSize()
 template <class N>
 int Lista<N>::getSize(){
     return size;
+}
+template <class N>
+void Lista<N>::Print(){
+    N* tmp = first;
+    for (int i = 0; i < size; i++)
+    {
+        std::cout << i+1 << ". "<< tmp->ToString() << std::endl;
+        tmp = tmp->getNext();
+    }
+    
+    
 }
 //template class Lista<Node<int>>;
 #endif
