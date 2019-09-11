@@ -12,7 +12,11 @@ int main(int argc, char const *argv[])
     ListaDCircular<DNode<int>>* l2 = new ListaDCircular<DNode<int>>();
     int num = 2;
     int* point =& num;
-    l->Add(new Node<int>(point));
+    int num2 = 4;
+    int* point2 =& num2;
     l2->Add(new DNode<int>(point));
-
+    l2->Add(new DNode<int>(point2));
+    Node<int>* tmp = l->getFirst();
+    DNode<int> *tmp2 = l2->getFirst();
+    
 }

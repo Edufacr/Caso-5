@@ -42,4 +42,4 @@ V *Node<V>::getValue()
 {
     return value;
 }
-template class Node<int>;
+//template class Node<int>;

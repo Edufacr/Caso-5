@@ -25,4 +25,4 @@ void ListaDCircular<N>::Add(N* pNode){
     }
     
 }
-template class ListaDCircular<DNode<int>>;
+//template class ListaDCircular<DNode<int>>;
