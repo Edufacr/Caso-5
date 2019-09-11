@@ -2,6 +2,9 @@
 
 JsonReader::JsonReader(){
 }
+JsonReader::~JsonReader(){
+    
+}
 
 bool JsonReader::cargarJson(std::string pName){
     std::ifstream myfile(pName);

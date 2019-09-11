@@ -1,18 +1,31 @@
 #include "DNode.hpp"
-DNode::DNode(Event* pEvent,Node* pNext, Node* pBefore){
-    Node(pEvent,pNext);
+
+template <class V>
+DNode<V>::DNode(V *pValue, Node<V> *pNext, Node<V> *pBefore) : Node<V>(pValue, pNext)
+{
     before = pBefore;
 }
 
-DNode::DNode(Event* pEvent)
+template <class V>
+DNode<V>::DNode(V *pValue):Node<V>(pValue)
 {
-    Node(pEvent);
+    
 }
 
-DNode::~DNode()
+template <class V>
+DNode<V>::~DNode()
 {
 }
 
-Node* DNode::getBefore(){
+template <class V>
+Node<V> *DNode<V>::getBefore()
+{
     return before;
 }
+
+template <class V>
+void DNode<V>::setBefore(Node<V> *pBefore)
+{
+    before = pBefore;
+}
+//template class DNode<int>;

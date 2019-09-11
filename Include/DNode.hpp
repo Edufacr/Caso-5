@@ -1,13 +1,17 @@
+#ifndef DNODE_HPP
+#define DNODE_HPP
 #include "Node.hpp"
-class DNode:Node
+template <class V>
+class DNode : public Node<V>
 {
 private:
-    Node* before;
+    Node<V> *before;
+
 public:
-    DNode(Event* pEvent);
-    DNode(Event* pEvent,Node* pNext, Node* pBefore);
+    DNode(V *pValue);
+    DNode(V *pValue, Node<V> *pNext, Node<V> *pBefore);
     ~DNode();
-    Node* getBefore();
+    Node<V> *getBefore();
+    void setBefore(Node<V>*);
 };
-
-
+#endif

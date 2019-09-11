@@ -1,11 +1,15 @@
+#ifndef LISTADCIRCULAR_HPP
+#define LISTADCIRCULAR_HPP
 #include "Lista.hpp"
 #include "DNode.hpp"
-class ListaDCircular: private Lista{
+template <class N>
+class ListaDCircular: public Lista<N>{
 private:
     /* data */
 public:
     ListaDCircular(/* args */);
     ~ListaDCircular();
-    void Add(Event* event);
+    void Add(N* pNode);
 };
+#endif
 

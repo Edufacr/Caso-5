@@ -1,3 +1,5 @@
+#ifndef TICKETMANAGER_HPP
+#define TICKETMANAGER_HPP
 class TicketManager
 {
 private:
@@ -6,5 +8,6 @@ public:
     TicketManager(/* args */);
     ~TicketManager();
 };
+#endif
 
 

@@ -1,7 +1,10 @@
+#ifndef JSONREADER_HPP
+#define JSONREADER_HPP
+
 #include <string>
 #include <iostream>
 #include <fstream>
-#include "Include/nlohmann/json.hpp"
+#include "json.hpp"
 class JsonReader
 {
     nlohmann::json file;
@@ -14,3 +17,4 @@ public:
     bool cargarJson(std::string pName);
     void transformJsonToList();
 };
+#endif

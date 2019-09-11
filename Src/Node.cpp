@@ -1,30 +1,45 @@
 #include "Node.hpp"
-Node::Node(){
+template <class V>
+Node<V>::Node()
+{
     next = nullptr;
-    event = nullptr;
+    value = nullptr;
 }
 
-Node::Node(Event* pEvent)
+template <class V>
+Node<V>::Node(V *pValue)
 {
     next = nullptr;
-    event = pEvent;
+    value = pValue;
 }
-Node::Node(Event* pEvent,Node* pNext){
+
+template <class V>
+Node<V>::Node(V *pValue, Node<V> *pNext)
+{
     next = pNext;
-    event = pEvent;
+    value = pValue;
 }
-Node::~Node()
+
+template <class V>
+Node<V>:: ~Node()
 {
 }
-Node *Node::getNext()
+
+template <class V>
+Node<V> *Node<V>:: getNext()
 {
     return next;
 }
-void Node::setNext(Node *pNode)
+
+template <class V>
+void Node<V>::setNext(Node<V> *pNode)
 {
     next = pNode;
 }
-Event *Node::getEvent()
+
+template <class V>
+V *Node<V>::getValue()
 {
-    return event;
+    return value;
 }
+template class Node<int>;

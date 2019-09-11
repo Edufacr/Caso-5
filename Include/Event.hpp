@@ -1,3 +1,5 @@
+#ifndef EVENT_HPP
+#define EVENT_HPP
 
 class Event
 {
@@ -7,11 +9,6 @@ public:
     Event(/* args */);
     ~Event();
 };
+#endif
 
-Event::Event(/* args */)
-{
-}
 
-Event::~Event()
-{
-}

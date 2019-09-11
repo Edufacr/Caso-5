@@ -1,17 +1,19 @@
-#include "Event.hpp"
+#ifndef NODE_HPP
+#define NODE_HPP
+template <class V>
 class Node
 {
 private:
-    Node* next;
-    Event* event;
+    Node<V> *next;
+    V *value;
+
 public:
     Node();
-    Node(Event* pEvent);
-    Node(Event* pEvent,Node* pNext);
+    Node(V *pValue);
+    Node(V *pValue, Node<V> *pNext);
     ~Node();
-    Node* getNext();
-    void setNext(Node* pNode);
-    Event *getEvent();
+    Node<V> *getNext();
+    void setNext(Node<V> *pNode);
+    V *getValue();
 };
-
-
+#endif
