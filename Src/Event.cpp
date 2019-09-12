@@ -1,5 +1,4 @@
 #include "Event.hpp"
-
 Event::Event(/* args */)
 {
 }

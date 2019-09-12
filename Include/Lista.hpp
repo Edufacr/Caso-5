@@ -19,7 +19,7 @@ public:
     void Clean();
     bool IsEmpty();
     void Add(N* pNode);
-    N* Search();
+    N* Search(int pos);
     void IncreaseSize();
     int getSize();
     void Print();
@@ -66,8 +66,17 @@ void Lista<N>::Add(N *pNode)
     size++;
 }
 template <class N>
-N *Lista<N>::Search()
+N *Lista<N>::Search(int pos)
 {
+    N* tmp = first;
+    for (int i = 0; i < size; i++)
+    {
+        if(pos == i){
+            return tmp;
+        }
+        tmp = tmp->getNext();
+    }
+    return null;
 }
 
 template <class N>
